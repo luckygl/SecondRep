@@ -26,7 +26,7 @@ public class ServerManager : MonoBehaviour {
 	void ThreadtoStartServer(){
 		Debug.Log ("子线程开启");
 		Socket clientSocket = m_listenerSocket.Accept (); //这里要放到协程里吧，或者子线程；不能放协程，协程会导致主线程block
-		
+		//直接修改，这样真的好么。。。。
 		print ("监听到连接请求");
 		string message = "hello,I'm Unity TCP Server";
 		byte[] sendbyteArr = System.Text.Encoding.UTF8.GetBytes (message);
